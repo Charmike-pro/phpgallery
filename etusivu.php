@@ -9,6 +9,10 @@
   <br>
   <input type="file" name="fileToUpload" id="fileToUpload">
   <br>
+  <label for="maker">Tekijä:</label>
+  <input type="text" id="maker" name="maker"><br><br>
+  <label for="subject">Kuvan aihe:</label>
+  <input type="text" id="subject" name="subject"><br><br>
   <br>
   <input type="submit" value="Upload Image" name="submit">
 </form>

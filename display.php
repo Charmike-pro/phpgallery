@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palautesivu</title>
 </head>
 <body>
     <h1>Kuvat</h1>
     <?php
-    include('data.txt');
+    include('data.xml');
     $files = glob("uploads/*.*");
     for ($i = 0; $i < count($files); $i++) {
         $image = $files[$i];

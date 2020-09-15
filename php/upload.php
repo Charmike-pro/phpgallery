@@ -1,5 +1,5 @@
 <body onload="goBack();">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 <br>
 <h1>Kiitos!</h1>
 <p>Etusivu aukeaa pian...</p>
@@ -60,24 +60,5 @@ if ($uploadOk == 0) {
     echo "";
   }
 }
-
-if ($_SERVER['REQUEST_METHOD'] != 'POST') {
-    die('Et tullut lomakkeelta!');
-}
-
-if (!isset($_POST['maker']) || !isset($_POST['subject'])) {
-    die('Et tullut oikealta lomakkeelta!');
-}
-
-
-$nimi = $_POST['maker'];
-$palaute = $_POST['subject'];
-$kuva = $_FILES['fileToUpload']['name'];
-$pvm = date("d.m.Y H:i");
-
-$file = fopen('data.xml', 'a');
-$rivi = "<p><b>Tekijä:</b> $nimi<br><b>Kuvan aihe:</b> $palaute<br><b>Tiedoston nimi: </b>uploads/$kuva<br>$pvm</p>" . PHP_EOL;
-fwrite($file, $rivi);
-
 
 ?>

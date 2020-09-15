@@ -18,3 +18,9 @@ body {
     padding: 10px;
     text-align: center;
   }
+
+  .right {
+
+    float: right;
+    margin: auto;
+  }

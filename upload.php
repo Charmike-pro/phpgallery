@@ -8,7 +8,7 @@ setTimeout(function goBack() {
   window.history.back();
 }, 3000);
 </script>
-</body>
+
 <?php
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -56,9 +56,12 @@ if ($uploadOk == 0) {
 } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
     echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-  } else {
-    echo "";
-  }
-}
+  } 
+  
+   // Tallennus XML-tiedostoon
+   include_once 'saver.php';
+   saveDataToXML($_POST, basename( $_FILES["fileToUpload"]["name"] ));
 
+}
 ?>
+</body>

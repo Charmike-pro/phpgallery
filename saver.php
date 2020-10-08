@@ -6,7 +6,7 @@ function saveDataToXML($data, $file_name){
     $xml = simplexml_load_file('data.xml');
 
     $new_pic = $xml->addChild('picture');
-    $new_pic->addAttribute('piilota','false');
+    $new_pic->addAttribute('piilota','true');
     $new_pic->addChild('author', $author);
     $new_pic->addChild('file', $file_name );
     $new_pic->addChild('date', date("Y-m-d"));

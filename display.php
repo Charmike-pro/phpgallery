@@ -7,8 +7,6 @@
     <title>Palautesivu</title>
 </head>
 <body>
-
-
 <?php 
 $xml = simplexml_load_file('data.xml');
 ?>

@@ -1,18 +1,20 @@
 <?php 
 $xml = simplexml_load_file('data.xml');
 ?>
-
-<?php foreach ($xml->picture as $pic):?>
+    <link rel="stylesheet" href="css/style.css">
+<?php
+$id = 0;
+foreach ($xml->picture as $pic):?>
     <div>
         <h2><?php echo $pic->author; ?></h2>
-        <img src="uploads/<?php echo $pic->file;?>" alt="kuva" />
+        <img src="uploads/<?php echo $pic->file;?>" alt="kuva"/>
         <p><?php echo $pic->date; ?></p>
-        <?php if ($pic->attributes()['piilota'] == "false"): ?>
-        <a href="">Piilota</a>
+        <?php if ($pic->attributes()['piilota'] == 'true'): ?>
+        <a href="toggle_hidden.php?id=<?php echo $id; ?>" target="_blank">Näytä</a>
         <?php else: ?>
-            <a href="">Näytä</a>
+            <a href="toggle_hidden.php?id=<?php echo $id; ?>" target="_blank">Piilota</a>
         <?php endif; ?>
+        <?php $id++; ?>
         </div>
-
 
 <?php endforeach; ?>
